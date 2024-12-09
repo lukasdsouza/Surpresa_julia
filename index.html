@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dedicatória Especial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #f5f5f5;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+            color: #ff4d4d;
+            font-size: 2.5em;
+        }
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 90%;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+        }
+        .gallery img {
+            scroll-snap-align: center;
+            margin: 10px;
+            border-radius: 10px;
+            max-width: 300px;
+            height: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+        }
+        .gallery .caption {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .dedications {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 90%;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+        }
+        .dedications h2 {
+            color: #ff4d4d;
+        }
+        .dedications p {
+            font-size: 1.2em;
+        }
+        footer {
+            background-color: #1e1e1e;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        footer p {
+            margin: 0;
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            clip-path: polygon(50% 0%, 61% 15%, 75% 15%, 100% 40%, 50% 100%, 0% 40%, 25% 15%, 39% 15%);
+            animation: fall 5s infinite;
+            transform: translateZ(10px);
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) scale(0.5) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dedicatória para Minha Namorada</h1>
+    </header>
+    <div class="gallery">
+        <div>
+            <img src="nos_divertindo.jpg" alt="Nós nos divertindo">
+            <p class="caption">Nós dois nos divertindo juntos</p>
+        </div>
+        <div>
+            <img src="relaxando.jpg" alt="Relaxando">
+            <p class="caption">Relaxando em um momento especial</p>
+        </div>
+        <div>
+            <img src="curtindo_praia.jpg" alt="Curtindo a praia">
+            <p class="caption">Curtindo a praia e a vida</p>
+        </div>
+        <div>
+            <img src="momento_amor.jpg" alt="Nosso momento de amor">
+            <p class="caption">Nosso momento de amor e carinho</p>
+        </div>
+    </div>
+    <div class="dedications">
+        <h2>Minhas Palavras para Você</h2>
+        <p>Você é minha inspiração diária, meu porto seguro e meu maior motivo para sorrir.</p>
+        <p>Cada momento ao seu lado é uma lembrança inesquecível que guardo com carinho.</p>
+        <p>Sou eternamente grato por ter você na minha vida. Te amo!</p>
+    </div>
+    <footer>
+        <p>Criado com muito amor ❤️</p>
+    </footer>
+    <script>
+        // Criando corações animados
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 200);
+    </script>
+</body>
+</html>
